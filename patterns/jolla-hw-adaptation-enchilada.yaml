@@ -1,35 +1,21 @@
-# Feel free to disable non-critical HA parts during devel by commenting lines out
-# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
-
-Description: Pattern with packages for enchilada HW Adaptation
-Name: jolla-hw-adaptation-enchilada
+Description: Pattern with packages for @DEVICE@ HW Adaptation
+Name: jolla-hw-adaptation-@DEVICE@
 Requires:
-- droid-hal-enchilada
-- droid-hal-enchilada-detritus
-- droid-hal-enchilada-img-boot
-- droid-hal-enchilada-kernel-modules
-- droid-config-enchilada-sailfish
-- droid-config-enchilada-pulseaudio-settings
-- droid-config-enchilada-policy-settings
-- droid-config-enchilada-preinit-plugin
-- droid-config-enchilada-flashing
-- droid-config-enchilada-bluez5
-- droid-hal-version-enchilada
-
-# fix audioflinger
-- audioflingerglue
-- pulseaudio-modules-droid-glue
+- droid-hal-@DEVICE@
+- droid-hal-@DEVICE@-img-boot
+- droid-hal-@DEVICE@-kernel-modules
+- droid-config-@DEVICE@-sailfish
+- droid-config-@DEVICE@-pulseaudio-settings
+- droid-config-@DEVICE@-policy-settings
+- droid-config-@DEVICE@-preinit-plugin
+- droid-config-@DEVICE@-flashing
+- droid-config-@DEVICE@-bluez5
+- droid-hal-version-@DEVICE@
 
 # Hybris packages
 - libhybris-libEGL
 - libhybris-libGLESv2
 - libhybris-libwayland-egl
-
-# Telephony
-- ofono-ril-binder-plugin
-
-# Flashlight
-- jolla-settings-system-flashlight
 
 # Sensors
 - hybris-libsensorfw-qt5
@@ -42,8 +28,6 @@ Requires:
 - qt5-plugin-generic-evdev
 
 - pulseaudio-modules-droid
-# for call audio
-- pulseaudio-modules-droid-hidl
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
@@ -59,7 +43,7 @@ Requires:
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
 # For devices with droidmedia and gst-droid built, see HADK pdf for more information
-- gstreamer1.0-droid
+#- gstreamer1.0-droid
 
 # This is needed for notification LEDs
 - mce-plugin-libhybris
@@ -69,7 +53,6 @@ Requires:
 - usb-moded
 - usb-moded-defaults-android
 - usb-moded-developer-mode-android
-- usb-moded-connection-sharing-android-config
 
 # Extra useful modes not officially supported:
 # might need some configuration to get working
@@ -88,13 +71,15 @@ Requires:
 # For GPS
 - geoclue-provider-hybris
 
+# For Bluetooth
+- bluebinder
+
 # For FM radio on some QCOM devices
 #- qt5-qtmultimedia-plugin-mediaservice-irisradio
 #- jolla-mediaplayer-radio
 
 # NFC for devices using Android 8 or newer as base
-- nfcd-binder-plugin
-- jolla-settings-system-nfc
+#- nfcd-binder-plugin
+#- jolla-settings-system-nfc
 
-Summary: Jolla HW Adaptation enchilada
-
+Summary: Jolla HW Adaptation @DEVICE@
